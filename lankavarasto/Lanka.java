@@ -4,7 +4,10 @@
  */
 
 package lankavarasto;
-/**Olioluokka Lanka */
+/**
+ * Olioluokka Lanka, joka toimii yksittäisen Lankakeran tietomallina
+ * lankavaraston hallinnointi -ohjelmassa.
+ * */
 public class Lanka {
     private String nimi;
     private double maara;
@@ -131,48 +134,12 @@ public class Lanka {
         return varattu;
     }
 
-    /**TÄSSÄ EKA 30 MIN = loin olioluokan Lanka, muuttujat, konstruktorit sekä getterit ja setterit */
-
     /**
-     * Lisää lankaa langan määrään.
-     * @param maara määrä, johon lankaa lisätään.
-     * @param lisattavaMaara määrä, joka lankaa halutaan lisätä.
-     * @param uusiMaara uusi määrä, johon haluttu määrä on lisätty.
-     * @return tieto, että lanka on lisätty onnistuneesti.
+     * toString-metodi, palauttaa Lanka-olion tiedot tulostettuna
+     * @return lankaolion tiedot merkkijonona
      */
-    public String lisaaLankaa(double lisattavaMaara){
-        double uusiMaara=maara+lisattavaMaara;
-        maara=uusiMaara;
-        return "Lanka lisätty";
+    public String toString(){
+        String tuloste = "Nimi:" +nimi+ ", määrä: "+maara+" grammaa, juoksevuus: "+juoksevuus+" m/100g, väri: "+vari+ " sukkalanka: " +sukkalanka+" varattu projektiin: "+varattu;
+        return tuloste;
     }
-    /**
-     * Vähentää langan määrää. 
-     * Tarkistaa, onko lankaa mahdollista vähentää haluttu määrä.
-     * @param vahennettavaMaara lankavaraston langasta vähennettävä määrä
-     * Jos lankaa voidaan vähentää
-     * @return true
-     * Jos lankaa ei voida vähentää
-     * @return false
-     * Jos lanka vähennyksen yhteydessä loppuu
-     * @return true ja tieto, että lanka loppui.
-    */
-    public boolean vahennaLankaa(double vahennettavaMaara) {
-        if (vahennettavaMaara > maara) {
-            System.out.println("Virhe: lankaa on liian vähän.");
-            return false;
-        }
-        maara -= vahennettavaMaara;
-        if (maara == 0) {
-            System.out.println("Lanka loppui nyt.");
-        }
-        return true;
-    }
-    /**TÄSSÄ ENSIMMÄISEN TUNNIN TYÖ - lisätty langan lisäykseen ja vähentämiseen metodit */
-public static void main(String[] args) {
-    System.out.println("moi");
 }
-}
-
-/**
- * Käytetty 40 min Javadoc-dokumentaatioon olioluokalle 
- */
